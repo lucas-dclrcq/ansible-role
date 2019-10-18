@@ -1,0 +1,4 @@
+---
+keycloak_install_dir: /opt/keycloak
+keycloak_user: keycloak
+keycloak_group: keycloak

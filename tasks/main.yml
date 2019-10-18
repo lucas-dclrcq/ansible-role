@@ -1,0 +1,25 @@
+---
+- name: Check if {{keycloak_install_dir}} directory exists
+  stat:
+    path: "{{keycloak_install_dir}}"
+  register: keycloak_dir
+
+- name: Create Keycloak group
+  group:
+    name: "{{keycloak_group}}"
+    state: present
+
+- name: Create Keycloak user
+  user:
+    name: "{{keycloak_user}}"
+    groups: "{{keycloak_group}}"
+    state: present
+
+- name: Create Keycloak directory
+  file:
+    path: "{{ keycloak_install_dir }}"
+    owner: "{{ keycloak_user }}"
+    group: "{{ keycloak_group }}"
+    state: directory
+    mode: 0755
+    recurse: true
