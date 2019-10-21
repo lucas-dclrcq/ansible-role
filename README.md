@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+The goal of this role is to completely automate the installation and the configuration of Keycloak.
 
 Requirements
 ------------
